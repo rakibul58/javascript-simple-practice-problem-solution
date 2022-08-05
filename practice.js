@@ -119,3 +119,106 @@ switch (signal) {
     default:
         break;
 }
+
+/*
+প্রাকটিস চ্যালেঞ্জ-৩ টা: 
+
+১. leapYear() নামে ফাংশন লিখো এবং নেক্সট ইয়ার অর্থাৎ ২০২৩ কি leap year নাকি সেটা চেক করো। Leap year হলে ফাংশন true রিটার্ন করবে আর leap year না হলে false রিটার্ন করবে।
+*/
+
+
+const leapYear = (year) => (year%4==0 && year%100!=0) || (year%400==0 && year%100==0);
+
+const year = 2023;
+
+// console.log(leapYear(year));
+
+/*
+ 
+
+২. তোমার বয়স কি odd নাকি even সংখ্যা সেটা চেক কর একটা ফাংশন দিয়ে। সেই ফাংশনকে কোন সংখ্যা প্যারামিটার হিসেবে দিলে, সেই সংখ্যা Even হলে ফাংশন true রিটার্ন করবে আর Odd হলে false রিটার্ন করবে।
+
+*/
+
+
+    const evenOrOdd = (year) => year%2==0 ;
+
+    // console.log(evenOrOdd(23));
+
+
+/*
+ 
+
+৩. এমন একটা ফ্যাংশনা লিখো যেটাকে তুমি ঘন্টাকে ইনপুট প্যারামিটার হিসেবে দিবে। আর সে সেই ঘন্টাকে মিনিটে কনভার্ট করে মিনিট রিটার্ন করবে। 
+
+*/
+
+    const hourToMin = (hour) => hour*60 ;
+
+    // console.log(hourToMin(5));
+
+/*
+
+৪. মনে করো তোমার ৪ ঘণ্টা লাগবে ঢাকাই পোঁছতে। তুমি এখন এ ভ্যালু ৪ কে একটা ফাংশনে পাঠাবা এবং সে ফাংশন ভেলু ৪ কে second এ convert করে তোমাকে রিটার্ন করবে।
+
+*/
+
+    const hourToSeconds = (hour) => hour*3600;
+
+    // console.log(hourToSeconds(4));
+
+/*
+Practice Problem 1
+    Write a function that will take hour as the input parameter and will
+convert it into minutes and will return the result in minutes.
+*/
+
+
+        // console.log(hourToMin(5));
+
+/*
+Practice Problem 2
+
+Write a function findLeapYear() that will take the array
+[2023,2024,2025,2028,2030] as the input parameter and will check if
+each year is a leap year. If a year is a leap year insert that year in a
+new array, return the new array and print the result.
+*/
+
+    const findLeapYear = (years) => {
+        let leapYear = [];
+        for (const year of years) {
+            if((year%4==0 && year%100!=0) || (year%400==0 && year%100==0))
+                leapYear.push(year);
+        }
+        return leapYear;
+    }
+
+    const years = [2023,2024,2025,2028,2030];
+
+    // console.log(findLeapYear(years))
+
+
+/*
+Practice Problem 3
+
+Write a function findOddSum() that will take the array [5, 7, 8, 10, 45, 30]
+as the input parameter and will return the sum of the odd numbers.
+*/
+
+
+    const findOddSum = (nums) => {
+        let oddSum = 0 ;
+        for (const num of nums) {
+            if(num%2==1)
+                oddSum += num;
+        }
+
+        return oddSum;
+    }
+
+    const nums = [5, 7, 8, 10, 45, 30];
+    
+    const sum = findOddSum(nums);
+
+    // console.log(sum);
